@@ -1,0 +1,17 @@
+------- Create venv -------
+MacOS: python3 -m venv venv
+Windows: py/python -m venv venv
+
+---- Activate venv ----
+.\venv\Scripts\activate 
+
+------ Install Flask ------
+Windows: pip install Flask
+
+------ Save dependencies to a TXT -------
+pip3 freeze > requirements.txt
+
+
+------ Install SQLite3 ------
+Windows: (On a Command Prompt) winget install SQLite.SQLite
+MacOS: brew install sqlite (Install homebrew first)
