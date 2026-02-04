@@ -11,6 +11,8 @@ Windows: pip install Flask
 ------ Save dependencies to a TXT -------
 pip3 freeze > requirements.txt
 
+--- Activate SQLite -----
+windows: sqlite3 budget_manager.db
 
 ------ Install SQLite3 ------
 Windows: (On a Command Prompt) winget install SQLite.SQLite
