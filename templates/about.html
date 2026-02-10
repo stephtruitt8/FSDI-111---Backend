@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block title %}
+About Page
+{% endblock %}
+
+{% block content %}
+
+<div>
+    <h1>About me</h1>
+    <!-- '{{ NAME_OF_THE_PARAMETER}}' is the placeolder to reach variables sent from python -->
+    <h1>Hey There I'm {{ name }}</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi sunt ex quibusdam rem veniam iusto incidunt corrupti ullam nulla doloribus quaerat exercitationem quasi, blanditiis nobis voluptates odio rerum aliquam deleniti?</p>
+    <p><strong>My hobbies include:</strong></p>
+    <ul>
+      {% for item in hobbies %}
+        <li>{{ item }}</li>
+      {% endfor %}
+    </ul>
+</div>
+
+{% endblock %}

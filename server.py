@@ -1,4 +1,4 @@
-from flask import Flask, jsonify, request
+from flask import Flask, jsonify, request, render_template
 import sqlite3
 
 app = Flask(__name__)
@@ -178,7 +178,7 @@ def update_user(user_id):
 
 
 @app.get("/api/expenses")
-def get_expenses():
+def get_expenses(): 
     conn = sqlite3.connect(DB_NAME)
     conn.row_factory = sqlite3.Row
     cursor = conn.cursor()
@@ -311,8 +311,30 @@ def update_expense(expense_id):
     finally:
         conn.close()
 
+# --------- Frontend (HTML * Jinja) ----------
+# Frontend 
+
+@app.get("/")
+def home():
+    return render_template("home.html")
+
+@app.get("/about")
+def about():
+    name = 'Stephen Truitt'
+    hobbies = ["Coding", "Cooking", "Traveling", "Eating", "Sleeping"]
+    return render_template("about.html", name=name, hobbies=hobbies)
+
+@app.get("/contact")
+def contact_me():
+    contact_info = {
+        "email": "stephtruitt8@sdgku.edu",
+        "phone": "123-456-7890",
+        "address": "123 Main St, Anytown, USA"
+    }
+    return render_template("contact.html", contact_info=contact_info)
 
 
+ 
 if __name__ == '__main__':
     init_db()
     app.run(debug=True)

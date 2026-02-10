@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title %}
+Contact Me
+{% endblock %}
+
+{% block content %}
+
+    <div class="container">
+      <h1>Contact Information</h1>
+        <p>You can reach me at:</p>
+        <ul>
+          <li>Email: {{ contact_info["email"] }}</li>
+          <li>Phone: {{ contact_info["phone"] }}</li>
+          <li>Address: {{ contact_info["address"] }}</li>
+            
+    </div>
+
+    <div>
+        {% if message %}
+            <div class="alert alert-success" role="alert">
+                {{ message }}
+            </div>
+        {% endif %}
+    </div>
+
+{% endblock %}
